@@ -1,4 +1,4 @@
-inputValue = 1233#int(input('Введите трехзначное число'))
+inputValue = int(input('Введите трехзначное число'))
 if inputValue not in range(100, 999):
     print('Это не трехзначное число!')
     exit(1)

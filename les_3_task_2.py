@@ -8,17 +8,15 @@ import random
 massive = random.sample(range(-100, 100), 10)
 print('Массив:', massive)
 
-i = 0
-ind = -1
+max_negative_value = -100
+index_of_value = -1
 
-for i in massive:
-    if i < 0 and ind == -1:
-        ind = massive.index(i)
-    elif 0 > i > massive[ind]:
-        ind = massive.index(i)
-    i += 1
-if massive[ind] >= 0:
+for index, value in enumerate(massive, 1):
+    if 0 > value > max_negative_value:
+        max_negative_value = value
+        index_of_value = index
+
+if index_of_value == -1:
     print('Отрицательных элементов не нашлось')
-
 else:
-    print('Максимальный отрицательный элемент:', massive[ind], 'стоит на позиции:', ind)
+    print('Максимальный отрицательный элемент:', max_negative_value, 'стоит на позиции:', index_of_value)

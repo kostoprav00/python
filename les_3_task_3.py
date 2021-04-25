@@ -3,17 +3,23 @@
 
 import random
 
-massive = random.sample(range(100), 10)
+massive = [random.randint(0, 10) for i in range(10)]
 print('Массив:', massive)
 
-min1 = 0
-min2 = 1
+min_value = 6
+min_index = 0
+min_value2 = 6
+min_index2 = 0
 
-for i in massive:
-    if massive[min1] > i:
-        min2 = min1
-        min1 = massive.index(i)
-    elif massive[min2] > i:
-        min2 = massive.index(i)
+for index, value in enumerate(massive):
+    if value < min_value:
+        min_value = value
+        min_index = index
 
-print('%d — первое наимельшее число, %d — второе наименьшее число' % (massive[min1], massive[min2]))
+for ind, val in enumerate(massive):
+    if min_index == ind:
+        continue
+    if val < min_value2:
+        min_value2 = val
+
+print('%d — первое наимельшее число, %d — второе наименьшее число' % (min_value, min_value2))

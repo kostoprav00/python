@@ -6,20 +6,24 @@ import random
 massive = random.sample(range(100), 10)
 print('Массив:', massive)
 
-min_ = 0
-max_ = 0
+min_index = 0
+max_index = 0
 
-for i in massive:
-    if i < massive[min_]:
-        min_ = massive.index(i)
-    elif i > massive[max_]:
-        max_ = massive.index(i)
-print('Минимальный и максимальный элемент: ', massive[min_], 'и',  massive[max_])
+min_value = massive[0]
+max_value = massive[0]
+for index, value in enumerate(massive):
+    if value > max_value:
+        max_value = value
+        max_index = index
+    elif value < min_value:
+        min_value = value
+        min_index = index
+print('Минимальный и максимальный элемент: ', min_value, 'и', max_value)
 
-if min_ > max_:
-    min_, max_ = max_, min_
+if min_index > max_index:
+    min_index, max_index = max_index, min_index
 
 summ = 0
-for i in range(min_+1, max_):
+for i in range(min_index + 1, max_index):
     summ += massive[i]
 print('Сумма находящихся между ними элементов:', summ)

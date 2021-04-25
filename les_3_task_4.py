@@ -1,8 +1,8 @@
 # Определить, какое число в массиве встречается чаще всего.
 
-from random import random
+from random import randint
 
-massive = [int(random()*6) for i in range(10)]
+massive = [randint(0, 6) for i in range(10)]
 print('Массив:', massive)
 
 massive_unique = set(massive)

@@ -20,7 +20,7 @@
 
 from random import uniform
 
-n = int(input('Введите количество чисел в массиве: '))
+n = 10
 generated_array = [uniform(0, 50) for i in range(0, n)]
 print(generated_array)
 
